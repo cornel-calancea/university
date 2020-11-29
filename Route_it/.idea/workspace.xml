@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f6831a30-eee1-41f3-8c9d-8fe588c6a7cc" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ProjectId" id="1ZCnmp90QZcWmAB9quKZRCg0RaX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PP/legarea-var-functionale" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/include" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Makefile.Makefile">
+    <configuration name="Makefile (1)" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="Makefile (2)" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="Makefile" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Makefile.Makefile" />
+        <item itemvalue="Makefile.Makefile" />
+        <item itemvalue="Makefile.Makefile (2)" />
+        <item itemvalue="Makefile.Makefile (1)" />
+        <item itemvalue="Makefile.Makefile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f6831a30-eee1-41f3-8c9d-8fe588c6a7cc" name="Default Changelist" comment="" />
+      <created>1584352104357</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584352104357</updated>
+      <workItem from="1584352106092" duration="887000" />
+      <workItem from="1584354236424" duration="599000" />
+      <workItem from="1584533232390" duration="5022000" />
+      <workItem from="1584604699093" duration="8356000" />
+      <workItem from="1584715763464" duration="2356000" />
+      <workItem from="1584796143000" duration="9568000" />
+      <workItem from="1584949683967" duration="10669000" />
+      <workItem from="1585046811933" duration="6301000" />
+      <workItem from="1585206544182" duration="10186000" />
+      <workItem from="1585239717858" duration="4759000" />
+      <workItem from="1585311315177" duration="13250000" />
+      <workItem from="1585552596009" duration="8649000" />
+      <workItem from="1585574488144" duration="5292000" />
+      <workItem from="1585730823664" duration="7905000" />
+      <workItem from="1585746544887" duration="635000" />
+      <workItem from="1585812219785" duration="6460000" />
+      <workItem from="1585829330455" duration="3322000" />
+      <workItem from="1585840439064" duration="7242000" />
+      <workItem from="1585850904778" duration="445000" />
+      <workItem from="1585904546202" duration="1587000" />
+      <workItem from="1585919294286" duration="7825000" />
+      <workItem from="1585985588430" duration="13413000" />
+      <workItem from="1586005256287" duration="1070000" />
+      <workItem from="1586087248166" duration="3390000" />
+      <workItem from="1586095066614" duration="344000" />
+      <workItem from="1586181717093" duration="501000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="808" y="278" width="551" height="311" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1584609224397">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state x="808" y="278" width="551" height="311" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.27.1600.814@0.27.1600.814" timestamp="1584609224397" />
+    <state x="583" y="191" width="424" height="484" key="FileChooserDialogImpl" timestamp="1586182216579">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state x="583" y="191" width="424" height="484" key="FileChooserDialogImpl/0.27.1600.814@0.27.1600.814" timestamp="1586182216579" />
+    <state width="754" height="200" key="GridCell.Tab.0.bottom" timestamp="1585058528625">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state width="754" height="200" key="GridCell.Tab.0.bottom/0.27.1600.814@0.27.1600.814" timestamp="1585058528625" />
+    <state width="754" height="200" key="GridCell.Tab.0.center" timestamp="1585058528625">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state width="754" height="200" key="GridCell.Tab.0.center/0.27.1600.814@0.27.1600.814" timestamp="1585058528625" />
+    <state width="754" height="200" key="GridCell.Tab.0.left" timestamp="1585058528625">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state width="754" height="200" key="GridCell.Tab.0.left/0.27.1600.814@0.27.1600.814" timestamp="1585058528625" />
+    <state width="754" height="200" key="GridCell.Tab.0.right" timestamp="1585058528625">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state width="754" height="200" key="GridCell.Tab.0.right/0.27.1600.814@0.27.1600.814" timestamp="1585058528625" />
+    <state x="363" y="75" key="SettingsEditor" timestamp="1585554812919">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state x="363" y="75" key="SettingsEditor/0.27.1600.814@0.27.1600.814" timestamp="1585554812919" />
+    <state x="100" y="125" width="1400" height="616" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586000034931">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state x="100" y="125" width="1400" height="616" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1600.814@0.27.1600.814" timestamp="1586000034931" />
+    <state x="900" y="125" width="600" height="616" maximized="true" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1585929247537">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state x="900" y="125" width="600" height="616" maximized="true" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.27.1600.814@0.27.1600.814" timestamp="1585929247537" />
+    <state x="851" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1586181716960">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state x="851" y="261" key="com.intellij.ide.util.TipDialog/0.27.1600.814@0.27.1600.814" timestamp="1586181716960" />
+    <state x="463" y="162" width="672" height="678" key="search.everywhere.popup" timestamp="1586001599213">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state x="463" y="162" width="672" height="678" key="search.everywhere.popup/0.27.1600.814@0.27.1600.814" timestamp="1586001599213" />
+    <state x="925" y="347" width="540" height="172" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1585991809107">
+      <screen x="0" y="27" width="1600" height="814" />
+    </state>
+    <state x="925" y="347" width="540" height="172" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1600.814@0.27.1600.814" timestamp="1585991809107" />
+  </component>
+</project>
