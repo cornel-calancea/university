@@ -1,25 +1,11 @@
- ©Corneliu Calancea, 2020
- Tema 1 Protocoale de comunicație - 2020
+ ©Corneliu Calancea, 2020 This archive contains an implementation of some basic
+functions of a router
 
- În linii generale am abordat problema după cum urmează :
- Întâi am parsat tabelul, utilizând funcțiile definite în parser.c. Pentru eficiență, am implementat căutare binară în tabel, care îmi oferă complexitate O(log N).
- Tabelul ARP și funcționalitatea sa sunt implementate în arpTable.c.
-
- Pentru fiecare pachet primit am analizat ierarhic headerele și am decis în ce fel trebuie prelucrat. Pentru aceasta, am creat o funcție getMessageType, care întoarce un tip codificat al mesajului. În dependență de tip, este apelată una dintre funcțiile : 
- - forward(transmite mai departe mesajul)
- - send_arp_request (trimite ARP Request)
- - handle_arp_request (trimite un ARP Reply)
- - handle_arp_reply (actualizează tabelul ARP și trimite mesajele din coadă)
- - handle_echo (răspunde la ping cu ICMP_ECHOREPLY)
- - send_icmp (trimite mesaje ICMP)
- De asemenea, pot să dau drop la pachet dacă are checksum greșit.
-
- Am implementat și modificarea checksumului conform RFC 1624 la decrementarea ttl-ului în forward.
-
- Probleme întâlnite :
- - pornirea checkerului și înțelegerea modului de funcționare a infrastructurii oferite - Mininet, Wireshark(explicații nu au fost aproape deloc)
- - înțelegerea tuturor headerelor și a diverselor mărunțișuri care apăreau pe parcurs referitoare la completarea acestora
- - problemă frecventă - routerul prindea tot pachetul care l-am trimis, trebuia să fac o copie
- - problemă stupidă - când trimiteam răspuns la ECHO, în wireshark îmi apărea DEST_UNREACH de la host-ul către care am trimis, chiar dacă pachetul era completat absolut corect. Am pierdut 2 zile ca să-mi dau seama că uitasem să pun un break în switch și după ce formam bine mesajul, routerul îl mai edita încă o dată în funcția send_icmp și părea că hostul trimite destination unreachable, când de fapt trimiteam eu singur ”din numele hostului”.
-
- În linii generale, ideea de temă a fost interesantă, însă lipsa de explicații și claritate pe parcurs au făcut-o foarte grea.
+Flow: - First, the routing table is parsed with the functions in parser.c. For
+efficiency reasons, we perform a binary search in the table - arpTable.c
+contains the implementation for the ARP table and its functions - in router.c
+you'll find the functions related to packet handling. The headers of a packet
+are analyzed hierarchically, and handled by various cases. 
+getMessageType returns a codified type of the message, according to which we can decide what to do with the packet: forward, handle_arp_request, send_arp_request, handle_arp_reply, handle_echo, or send_icmp.
+In case the packet has wrong checksum, it'll be dropped.
+At forwarding, the checksum is modified according to RFC1624.

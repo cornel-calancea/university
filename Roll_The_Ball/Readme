@@ -1,11 +1,20 @@
-Pentru rularea testelor:
+Copyright Corneliu Calancea & Universitatea Politehnica din Bucuresti, 2020
+
+This archive contains a command line implementation of Roll the Ball
+- RollTheBall.hs contains the implementation of the map, its construction 
+and display.
+- Search.hs contains the details related to the state-space search using 
+a bidirectional BFS. This version presumes the winning state to be given
+as input.
+---------------------------------------------------------------------------
+To run the tests:
       stack runhaskell RollTest.hs
-sau 
+or
       stack exec ghci RollTest.hs 
  
-      *RollTest.hs> main                      ---> rulează toate testele 
-      *RollTest.hs> runTestPP nume_test       ---> rulează un test anume,
-      												  cu o valoare din:
+      *RollTest.hs> main                      ---> runs all the tests 
+      *RollTest.hs> runTestPP nume_test       ---> runs a particular test,
+      												  with a value from:
       				[ testAddObject
         	                     , testCreateLevel
                 	             , testMove
@@ -18,10 +27,9 @@ sau
         	                     , testSolve
                 	             ]
 
-Pentru a juca în linia de comandă:
-      -- setati workingOs la Windows sau Linux
+To play from the command line:
+      -- set workingOs to Windows or Linux
        
       stack exec ghci Interactive.hs 
  
-      *Interactvie.hs> play level0               ---> pornește în linia de 
-                                                      comandă level0 
+      *Interactive.hs> play level0               ---> runs level0

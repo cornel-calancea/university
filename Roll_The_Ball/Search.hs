@@ -6,17 +6,15 @@ import Data.List as L
 import ProblemState
 import RollTheBall()
 import Data.Maybe
+
 {-
-    *** TODO ***
-
-    Tipul unei nod utilizat în procesul de căutare. Recomandăm reținerea unor
-    informații legate de:
-
-    * stare;
-    * acțiunea care a condus la această stare;
-    * nodul părinte, prin explorarea căruia a fost obținut nodul curent;
-    * adâncime
-    * copiii, ce vor desemna stările învecinate
+    A node in our state-space search, contains info regarding :
+    lvl - the current state
+    action - the move that lead to its state
+    depth - its depth in the state-space graph
+    daddy - the parent of the current node(may be none)
+    offspring - children nodes(where the current node may lead by all 
+                possible actions)
 -}
 
 data Node s a = Node
@@ -35,8 +33,7 @@ instance (Show s) => Show (Node s a) where
 
 
 {-
-    *** TODO ***
-    Gettere folosite pentru accesul la câmpurile nodului
+    Getters used to access node fields
 -}
 nodeState :: Node s a -> s
 nodeState (Node level _ _ _ _) = level
@@ -54,29 +51,19 @@ nodeChildren :: Node s a -> [Node s a]
 nodeChildren (Node _ _ _ _ children) = children
 
 {-
-    *** TODO ***
-
-    Generarea întregului spațiu al stărilor
-    Primește starea inițială și creează nodul corespunzător acestei stări,
-    având drept copii nodurile succesorilor stării curente.
+   generates the tree(successors) of the current node
 -}
-{-Generate node tree : level -> actiune -> adancime-}
 generateNodeTree :: (ProblemState s a) => Node s a -> Node s a
 generateNodeTree root@(Node levl actn dpth parent _) = (Node levl actn dpth parent children)
     where succNodes = [(Node l (Just act) (dpth+1) (Just root) []) | (act, l) <- successors levl]
           children = map generateNodeTree succNodes
 
-
+{-
+    Given a level, generates its state space
+-}
 createStateSpace :: (ProblemState s a, Eq s) => s -> Node s a
 createStateSpace levl = generateNodeTree (Node levl Nothing 0 Nothing [])
-{-
-    *** TODO ***
-   
-    Primește un nod inițial și întoarce un flux de perechi formate din:
-    * lista nodurilor adăugate în frontieră la pasul curent
-    * frontiera
 
--}
 
 nextStep :: (Eq a, Eq s) => ([Node s a], [Node s a]) -> [Node s a] -> [([Node s a], [Node s a])]
 nextStep (_, []) _ = [([], [])]
@@ -84,21 +71,20 @@ nextStep (_, oldFront) visited = (newAdded, newFront) : (nextStep (newAdded, new
     where newAdded = filter (`notElem` visited) (offspring (head oldFront))
           newFront = ((tail oldFront) ++ newAdded)
           newVisited = union visited newAdded
-    {-where newAdded = filter (`S.notMember` visited) (offspring $ head oldFront)
-          newFront = newAdded ++ oldFront
-          newVisited = S.union (S.fromList $ offspring $ head oldFront) visited-}
 
-
+{-
+    given a node, returns a stream of pairs that contains :
+    - the list of nodes added to the frontier in the current step
+    - the current frontier
+-}
 bfs :: (Eq a, Ord s) => Node s a -> [([Node s a], [Node s a])]
 bfs node = ([node], [node]) : (nextStep ([node], [node]) [])
 
 
 
 {-
-    *** TODO ***
-  
-    Primește starea inițială și finală și întoarce o pereche de noduri, reprezentând
-    intersecția dintre cele două frontiere.
+    Receives the initial and final states and returns the node where their frontiers
+    intersect
 -}
 
 bidirBFS :: (Eq a, Ord s, Show s) => Node s a -> Node s a -> (Node s a, Node s a)
@@ -117,17 +103,11 @@ bidirBFS n1 n2 = search (bfs n1) (bfs n2)
         elem4 = [x | x <- (fst list2), x == (head elem3)]
         size1 = length elem1
         size2 = length elem3
+
 {-
-    *** TODO ***
-
-    Pornind de la un nod, reface calea către nodul inițial, urmând legăturile
-    către părinți.
-
-    Întoarce o listă de perechi (acțiune, stare), care pornește de la starea inițială
-    și se încheie în starea finală.
-
+    given a node, recreates the path to the root node, by tracking the links 
+    to the node parents
 -}
-
 extractPath :: Node s a -> [(Maybe a, s)]
 extractPath (Node lev act _ par _) = rest ++ [(act, lev)]
         where rest
@@ -135,27 +115,17 @@ extractPath (Node lev act _ par _) = rest ++ [(act, lev)]
                 |otherwise = extractPath $ fromJust par
 
 
-
-
-{-
-    *** TODO ***
-
-    Pornind de la o stare inițială și una finală, se folosește de bidirBFS pentru a găsi
-    intersecția dintre cele două frontiere și de extractPath pentru a genera calea.
-
-    Atenție: Pentru calea gasită în a doua parcurgere, trebuie să aveți grijă la a asocia
-    corect fiecare stare cu acțiunea care a generat-o.
-
-    Întoarce o listă de perechi (acțiune, stare), care pornește de la starea inițială
-    și se încheie în starea finală.
--}
-
 reverseAct :: (ProblemState s a) => (Maybe a, s) -> (Maybe a, s)
 reverseAct (act, levl)
     |(isNothing act) = (Nothing, levl)
     |otherwise = (Just a1, l1)
         where (a1, l1) = reverseAction (fromJust act, levl)
 
+{- 
+    given the initial and final states, creates the problem state space and 
+    uses a bidirectional BFS to find the solution, returns a list of states and actions
+    that lead us from the initial state to the final winning state
+-}
 solve :: (ProblemState s a, Ord s, Show s, Eq a)
       => s          -- Starea inițială de la care se pornește
       -> s          -- Starea finală la care se ajunge

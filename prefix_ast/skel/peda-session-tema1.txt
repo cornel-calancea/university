@@ -1,3 +1,0 @@
-break /home/cornel/Desktop/IOCLA/iocla-tema1-resurse/skel/tema1.asm:55
-
-
